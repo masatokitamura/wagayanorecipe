@@ -1,0 +1,16 @@
+
+  <div class="text-center mb-5">
+    <div class="card" style="width: 10rem;">
+
+      <div class="card-body">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
+      </div>
+    <h4><%= @user.name %></h4>
+  </div>
+
+
+<ul class="nav nav-tabs nav-justified mb-3 mt-3">
+  <li class="nav-item"><a href="#" class="nav-link">投稿したレシピ</a></li>
+  <li class="nav-item"><a href="#" class="nav-link">お気に入りレシピ</a></li>
+</ul>
+
