@@ -7,12 +7,14 @@
         　　 毎日のご飯づくりを楽にしませんか？</h4>
   　　</div>
 　　</div>
+　　<%= render 'posts/posts', posts: @posts %>
 <% else %>
 　<div class="center jumbotron">
   　<div class="text-center">
    　 <h1>我が家のレシピへようこそ！</h1>
     　<h4>みんなで得意なレシピをシェアして<br>
         　毎日のご飯づくりを楽にしませんか？</h4>
-  　</div>
-  </div>　
+    </div>
+  </div>
+  <%= render 'posts/posts', posts: @posts %>
 <% end %>
