@@ -1,5 +1,9 @@
 class Post < ApplicationRecord
+  
   belongs_to :user
+  
+  has_many :favorites, foreign_key: "post_id", dependent: :destroy
+  has_many :users, through: :favorites
   
   mount_uploader :image, ImageUploader
   

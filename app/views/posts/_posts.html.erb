@@ -1,11 +1,19 @@
-<ul class="list-unstyled">
-  <% posts.each do |post| %>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title"><%= post.title %></h4>
-    </div>
-  </div>
-    
-  <% end %>
-</ul>
+<div class="card-deck">
+  <div class="row">
+    <% posts.each do |post| %>
+      <div class="col-sm-4">
+        <div class="card bg-light h-60 mb-5" style="width: 20rem; height: 33rem;">
+          <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
+          <div class="card-body">
+            <h5><%= link_to post.title, post %></h5>
+          </div>
+           <div class="card-footer">
+               <%= render 'favorites/like_button', post: post if logged_in? %>           
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div> 
+  <%= paginate posts %>  
+</div>
+

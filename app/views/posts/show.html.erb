@@ -1,0 +1,26 @@
+
+
+<div class="row">
+  <div class="col-sm-6">
+
+    <h2><%= @post.title %></h2>
+
+    <div>
+      <%= image_tag(@post.image.url, class: 'img-fluid') if @post.image? %>
+    </div>
+
+    <h3>材料</h3>
+    <p><%= @post.ingredient %></p>
+
+    <h3>作り方</h3>
+    <p><%= @post.content %></p>
+
+    <%= link_to '一覧に戻る', root_url %>
+
+    <% if current_user == @post.user %>
+      <%= link_to 'このレシピを編集する', edit_post_path %><br>
+      <%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+    <% end %>
+
+  </div>
+</div>

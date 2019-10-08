@@ -1,20 +1,9 @@
-<% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
-　　<div class="center jumbotron">
-  　　<div class="text-center">
-   　　 <h1>我が家のレシピへようこそ！</h1>
-    　　<h4>みんなで得意なレシピをシェアして<br>
-        　　 毎日のご飯づくりを楽にしませんか？</h4>
-  　　</div>
-　　</div>
-　　<%= render 'posts/posts', posts: @posts %>
-<% else %>
-　<div class="center jumbotron">
-  　<div class="text-center">
-   　 <h1>我が家のレシピへようこそ！</h1>
-    　<h4>みんなで得意なレシピをシェアして<br>
+
+<div class="center jumbotron mb-5">
+  <div class="text-center">
+     <h1>我が家のレシピへようこそ！</h1>
+     <h4>みんなで得意なレシピをシェアして<br>
         　毎日のご飯づくりを楽にしませんか？</h4>
-    </div>
   </div>
-  <%= render 'posts/posts', posts: @posts %>
-<% end %>
+</div>
+<%= render 'posts/posts', posts: @posts%>
