@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6 offset-sm-3">
+  <div class="col-sm-6 offset-sm-3 mb-3">
 
     <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
@@ -26,12 +26,12 @@
       <div class="mb-4">
         <%= f.label :image, '画像を選んでください' %>
         <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
       </div>
 
       <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 
     <% end %>
+    <%= link_to '一覧に戻る', root_url, class: 'btn btn-secondary btn-sm' %>
   </div>
 </div>
-
-<%= link_to '一覧に戻る', root_url %>

@@ -3,6 +3,7 @@
     <%= hidden_field_tag :post_id, post.id %>
     <%= button_tag '<i class="fas fa-heart text-danger text-right h3 "></i>Unlike'.html_safe, :type => "submit", 
     :class =>"btn btn-default btn-s-md" %>
+    <%= post.favorites.count %>
   <% end %>
 <% else %>
   <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
@@ -10,5 +11,6 @@
 
     <%= button_tag '<i class="fas fa-heart text-light text-right h3 "></i>Like'.html_safe, :type => "submit", 
     :class =>"btn btn-default btn-s-md" %>
+    <%= post.favorites.count %>
   <% end %>
 <% end %>

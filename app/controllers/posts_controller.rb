@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   
   def edit
     @post = Post.find(params[:id])
+    @post.image.cache! unless @post.image.blank?
   end
   
   def update

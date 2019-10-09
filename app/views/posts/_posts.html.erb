@@ -2,13 +2,13 @@
   <div class="row">
     <% posts.each do |post| %>
       <div class="col-sm-4">
-        <div class="card bg-light h-60 mb-5" style="width: 20rem; height: 33rem;">
+        <div class="card bg-light h-60 mb-5" style="width: 16rem; height: 28rem;">
           <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
           <div class="card-body">
             <h5><%= link_to post.title, post %></h5>
           </div>
            <div class="card-footer">
-               <%= render 'favorites/like_button', post: post if logged_in? %>           
+               <%= render 'favorites/like_button', post: post if logged_in? %>
             </div>
         </div>
       </div>

@@ -5,21 +5,21 @@
 
     <h2><%= @post.title %></h2>
 
-    <div>
+    <div class="mb-5 mt-3">
       <%= image_tag(@post.image.url, class: 'img-fluid') if @post.image? %>
     </div>
 
     <h3>材料</h3>
-    <p><%= @post.ingredient %></p>
+    <p><%= simple_format(h(@post.ingredient)) %></p>
 
     <h3>作り方</h3>
-    <p><%= @post.content %></p>
+    <p><%= simple_format(h(@post.content)) %></p>
 
-    <%= link_to '一覧に戻る', root_url %>
+    <%= link_to '一覧に戻る', root_url, class: 'btn btn-secondary btn-sm' %>
 
     <% if current_user == @post.user %>
-      <%= link_to 'このレシピを編集する', edit_post_path %><br>
-      <%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+      <%= link_to 'このレシピを編集する', edit_post_path, class: 'btn btn-primary btn-sm' %>
+      <%= link_to "削除", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
     <% end %>
 
   </div>
