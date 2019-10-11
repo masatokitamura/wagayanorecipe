@@ -6,4 +6,10 @@
         　毎日のご飯づくりを楽にしませんか？</h4>
   </div>
 </div>
-<%= render 'posts/posts', posts: @posts%>
+<p>検索</p>
+<%= form_tag(root_url,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :title => nil %>
+<% end %>
+
+  <%= render 'posts/posts', posts: @posts%>

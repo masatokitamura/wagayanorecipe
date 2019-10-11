@@ -43,6 +43,11 @@ class PostsController < ApplicationController
     flash[:success] = 'レシピを削除しました。'
     redirect_to root_url    
   end
+  
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @posts = Post.search(params[:search])
+  end
 
   private
 
