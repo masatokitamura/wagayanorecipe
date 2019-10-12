@@ -6,7 +6,11 @@
     <h2><%= @post.title %></h2>
 
     <div class="mb-3 mt-3">
-      <%= image_tag(@post.image.url, class: 'img-fluid') if @post.image? %>
+      <% if @post.image? %>
+        <%= image_tag(@post.image.url, class: 'img-fluid') %>
+      <% else %>
+        <%= image_tag 'default.jpg', class:" img-fluid img-thumbnail", Style: "height: 400px;" %>
+      <% end %>  
       <p>このレシピを作った人: <%=@user.name %></p>
     </div>
     
