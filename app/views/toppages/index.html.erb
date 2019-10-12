@@ -1,18 +1,22 @@
-
-<div class="center jumbotron mb-5">
-  <div class="text-center">
+<div class="row">
+  <div class="col-sm-10 offset-sm-1 jumbotron mb-5">
+    <div class="text-center">
      <h1>我が家のレシピへようこそ！</h1>
      <h4>みんなで得意なレシピをシェアして<br>
         　毎日のご飯づくりを豊かにしませんか？</h4>
+    </div>
+  </div>
+
+  <div class="col-sm-10 offset-sm-1">
+    <p>キーワード検索</p>
+    <%= form_tag(root_url,:method => 'get') do %>
+       <div class="input-group mb-1">
+         <%= text_field_tag :search, params[:search], placeholder: "レシピ名、材料、作り方", class: "form-control" %>
+         <span class="input-group-btn">
+         <%= button_tag "検索", :name => nil, class: "btn btn-primary" %>
+       </span>
+       </div>
+    <% end %>
+    <%= render 'posts/posts', posts: @posts%>
   </div>
 </div>
-<p>キーワード検索</p>
-<%= form_tag(root_url,:method => 'get') do %>
-  <div class="input-group mb-1">
-    <%= text_field_tag :search, params[:search], placeholder: "レシピ名、材料、作り方", class: "form-control" %>
-      <span class="input-group-btn">
-        <%= button_tag "検索", :name => nil, class: "btn btn-primary" %>
-      </span>
-  </div>
-<% end %>
-  <%= render 'posts/posts', posts: @posts%>
