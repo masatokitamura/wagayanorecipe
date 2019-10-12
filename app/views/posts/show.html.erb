@@ -5,16 +5,21 @@
 
     <h2><%= @post.title %></h2>
 
-    <div class="mb-5 mt-3">
+    <div class="mb-3 mt-3">
       <%= image_tag(@post.image.url, class: 'img-fluid') if @post.image? %>
+      <p>このレシピを作った人: <%=@user.name %></p>
     </div>
-
+    
+    
+    
+    
     <h3>材料</h3>
     <p><%= simple_format(h(@post.ingredient)) %></p>
 
     <h3>作り方</h3>
     <p><%= simple_format(h(@post.content)) %></p>
 
+    <%= render 'favorites/like_button', post: @post if logged_in? %>
     <%= link_to '一覧に戻る', root_url, class: 'btn btn-secondary btn-sm' %>
 
     <% if current_user == @post.user %>
