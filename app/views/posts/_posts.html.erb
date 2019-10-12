@@ -2,8 +2,12 @@
   <div class="card-deck" style="width:60rem">
     <% posts.each do |post| %>
       <div class="col-sm-4">
-        <div class="card bg-light mb-5" style="width: 16rem; height: 28rem;">
-          <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
+        <div class="card bg-light mb-5" style="width: 16rem; height: 27rem;">
+          <% if post.image.present? %>
+            <img class="card-img-top img-fluid img-thumbnail" src="<%= post.image %>" alt="Card image cap" Style="height: 250px;">
+          <% else %>
+             <%= image_tag 'default.jpg', class:"card-img-top img-fluid img-thumbnail", Style: "height: 250px;" %>
+          <% end %>
           <div class="card-body">
             <h5><%= link_to post.title, post %></h5>
           </div>
@@ -14,6 +18,6 @@
       </div>
     <% end %>
   </div> 
-  <%= paginate posts %>  
+  <%= paginate posts %>
 </div>
 
