@@ -3,13 +3,16 @@
   <div class="text-center">
      <h1>我が家のレシピへようこそ！</h1>
      <h4>みんなで得意なレシピをシェアして<br>
-        　毎日のご飯づくりを楽にしませんか？</h4>
+        　毎日のご飯づくりを豊かにしませんか？</h4>
   </div>
 </div>
-<p>検索</p>
+<p>キーワード検索</p>
 <%= form_tag(root_url,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :title => nil %>
+  <div class="input-group mb-1">
+    <%= text_field_tag :search, params[:search], placeholder: "レシピ名、材料、作り方", class: "form-control" %>
+      <span class="input-group-btn">
+        <%= button_tag "検索", :name => nil, class: "btn btn-primary" %>
+      </span>
+  </div>
 <% end %>
-
   <%= render 'posts/posts', posts: @posts%>

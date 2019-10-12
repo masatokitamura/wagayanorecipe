@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :ingredient,:content, :image)
+    params.require(:post).permit(:title, :ingredient,:content, :image, :remove_img)
   end
   
   def correct_user

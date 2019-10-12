@@ -11,11 +11,11 @@ class Post < ApplicationRecord
   validates :ingredient, presence: true, length: { maximum: 255 }
   validates :content, presence: true, length: { maximum: 255 }
   
-  def self.search(search) #ここでのself.はUser.を意味する
+  def self.search(search)
     if search
-      where(['title LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
+      where(['title LIKE ? OR ingredient LIKE ? OR content LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
     else
-      all #全て表示。User.は省略
+      all
     end
   end  
 end
