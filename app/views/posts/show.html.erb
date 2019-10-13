@@ -1,5 +1,3 @@
-
-
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
 
@@ -13,9 +11,6 @@
       <% end %>  
       <p>このレシピを作った人: <%=@user.name %></p>
     </div>
-    
-    
-    
     
     <h3>材料</h3>
     <p><%= simple_format(h(@post.ingredient)) %></p>
@@ -32,21 +27,21 @@
       <%= link_to 'このレシピを編集する', edit_post_path, class: 'btn btn-primary btn-sm' %>
       <%= link_to "削除", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
     <% end %>
-
-  </div>
-      <div id='sosyal'>
-        <p>SNSでシェアする</p>
-     <%= link_to  "https://twitter.com/share?url=#{request.url}&text=タイトル", class: 'twitter mr-1', title: 'Twitter', target: '_blank' do %>
-       <i class="fab fa-twitter"></i> Twitter
-     <% end %>   
-     <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", class: 'facebook mr-1', title: 'Facebook', target: '_blank' do %>
-       <i class="fab fa-facebook-f"></i> Facebook
-     <% end %>
-     <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=タイトル", class: 'line mr-1', title: 'LINE', target: '_blank' do %>
-       <i class="fab fa-line"></i> LINE
-     <% end %>   
-     <%= link_to "http://slackbutton.herokuapp.com/post/new/?url=#{request.url}&text=タイトル", class: 'slack mr-1', title: 'Slack', target: '_blank' do %>
-       <i class="fab fa-slack"></i> Slack
-     <% end %>
-　　</div>
+ 
+     <div id='sosyal'>
+       <p>SNSでシェアする</p>
+       <%= link_to  "https://twitter.com/share?url=#{request.url}&text=タイトル", class: 'twitter mr-1', title: 'Twitter', target: '_blank' do %>
+         <i class="fab fa-twitter"></i> Twitter
+       <% end %>   
+       <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", class: 'facebook mr-1', title: 'Facebook', target: '_blank' do %>
+         <i class="fab fa-facebook-f"></i> Facebook
+       <% end %>
+       <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=タイトル", class: 'line mr-1', title: 'LINE', target: '_blank' do %>
+         <i class="fab fa-line"></i> LINE
+       <% end %>   
+       <%= link_to "http://slackbutton.herokuapp.com/post/new/?url=#{request.url}&text=タイトル", class: 'slack mr-1', title: 'Slack', target: '_blank' do %>
+         <i class="fab fa-slack"></i> Slack
+       <% end %>
+     </div>
+　</div>
 </div>
