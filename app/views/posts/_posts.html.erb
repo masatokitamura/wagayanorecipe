@@ -4,9 +4,9 @@
       <div class="col-sm-4">
         <div class="card bg-light mb-5" style="width: 16rem; height: 27rem;">
           <% if post.image.present? %>
-            <img class="card-img-top img-fluid img-thumbnail" src="<%= post.image %>" alt="Card image cap" Style="height: 250px;">
+            <%= image_tag(post.image.url, class: 'card-img-top img-fluid img-thumbnail', alt: "card-img" , Style: "height: 250px;")%>
           <% else %>
-             <%= image_tag 'default.jpg', class:"card-img-top img-fluid img-thumbnail", Style: "height: 250px;" %>
+             <%= image_tag 'default.jpg', class:"card-img-top img-fluid img-thumbnail", alt: "card-sumple", Style: "height: 250px;" %>
           <% end %>
           <div class="card-body">
             <h5><%= link_to post.title, post %></h5>
@@ -19,4 +19,3 @@
     <% end %>
   </div> 
 </div>
-

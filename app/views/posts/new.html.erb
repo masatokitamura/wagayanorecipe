@@ -4,34 +4,26 @@
 
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-
     <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
-      
       <div class="form-group">
         <%= f.label :title, 'タイトル' %>
         <%= f.text_field :title, class: 'form-control' %>
       </div>
-
       <div class="mb-4">
         <%= f.label :image, 'レシピ画像' %><br>
         <%= f.file_field :image, id: :post_img %>
         <div class="preview" />
-
       </div>
-      
       <div class="form-group mt-3">
         <%= f.label :ingredient, '材料' %>
         <%= f.text_area :ingredient, class: 'form-control' %>
       </div>
-
       <div class="form-group">
         <%= f.label :content, '作り方' %>
         <%= f.text_area :content, class: 'form-control' %>
       </div>
-
       <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
-
     <% end %>
   </div>
 </div>

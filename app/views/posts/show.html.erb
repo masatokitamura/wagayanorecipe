@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-
     <h2><%= @post.title %></h2>
-
     <div class="mb-3 mt-3">
       <% if @post.image? %>
         <%= image_tag(@post.image.url, class: 'img-fluid') %>
@@ -14,20 +12,16 @@
     
     <h3>材料</h3>
     <p><%= simple_format(h(@post.ingredient)) %></p>
-
     <h3>作り方</h3>
     <p><%= simple_format(h(@post.content)) %></p><br>
     
-
-　
     <%= render 'favorites/like_button', post: @post if logged_in? %>
     <%= link_to '一覧に戻る', root_url, class: 'btn btn-secondary btn-sm' %>
-
     <% if current_user == @post.user %>
       <%= link_to 'このレシピを編集する', edit_post_path, class: 'btn btn-primary btn-sm' %>
       <%= link_to "削除", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
     <% end %>
- 
+    
      <div id='sosyal'>
        <p>SNSでシェアする</p>
        <%= link_to  "https://twitter.com/share?url=#{request.url}&text=タイトル", class: 'twitter mr-1', title: 'Twitter', target: '_blank' do %>
