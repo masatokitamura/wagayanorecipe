@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   
   validates :title, presence: true, length: { maximum: 25 }
   validates :ingredient, presence: true, length: { maximum: 255 }
-  validates :content, presence: true, length: { maximum: 255 }
+  validates :content, presence: true, length: { maximum: 400 }
   
   def self.search(search)
     if search

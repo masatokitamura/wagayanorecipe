@@ -1,17 +1,9 @@
-<div class="text-center mb-5">
-  <div class="card" style="width: 10rem;">
-    <div class="card-body">
-      <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
-    </div>
-    <h4><%= @user.name %></h4>
-  </div>
+<%= render 'users/users', user: @user %>
 
 
-
-    <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿したレシピ<span class="badge badge-secondary"><%= @count_posts %></span></a></li>
-      <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り<span class="badge badge-secondary"><%= @count_likes %></span></a></li>
-    </ul>
-    <%= render "posts/posts", posts: @favposts%>
-  </div>
-</div>
+<ul class="nav nav-tabs nav-justified mb-3">
+  <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿したレシピ<span class="badge badge-secondary"><%= @count_posts %></span></a></li>
+  <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り<span class="badge badge-secondary"><%= @count_likes %></span></a></li>
+</ul>
+  <%= render "posts/posts", posts: @favposts%>
+  <%= paginate @favposts %>

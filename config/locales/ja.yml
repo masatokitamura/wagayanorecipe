@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      post:
+    attributes:
+      post:
+        title: レシピ名
+        ingredient: 材料 
+        content: 作り方

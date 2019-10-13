@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
+  before_action :require_user_logged_in, only: [:show, :destroy]
 
   def index
   end
@@ -26,10 +26,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def destroy 
+    @user = current_user
+    @user.destroy
+    flash[:success] = '退会しました'
+    redirect_to root_url
+  end
+  
     
   def likes
     @user = User.find(params[:id])
-    @favposts = @user.favpost.page(params[:page])
+    @favposts = @user.favpost.order(id: :desc).page(params[:page]).per(9)
     counts(@user)
 
   end  
