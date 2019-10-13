@@ -15,7 +15,7 @@
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 12px 30px;
+    padding: 7px 14px;
   }
   .facebook:hover {
     background-color: #354F84;
@@ -37,7 +37,7 @@
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 12px 30px;
+    padding: 7px 14px;
   }
   .twitter:active {
     top: 2px;
@@ -59,7 +59,7 @@
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 12px 30px;
+    padding: 7px 14px;
   }
   .line:active {
     top: 2px;
@@ -81,7 +81,7 @@
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 12px 30px;
+    padding: 7px 14px;
   }
   .slack:active {
     top: 2px;
