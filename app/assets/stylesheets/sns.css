@@ -9,13 +9,13 @@
     display: inline;
     position: relative;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 7px 14px;
+    padding: 6px 12px;
   }
   .facebook:hover {
     background-color: #354F84;
@@ -31,13 +31,13 @@
     display: inline;
     position: relative;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 7px 14px;
+    padding: 6px 12px;
   }
   .twitter:active {
     top: 2px;
@@ -53,13 +53,13 @@
     display: inline;
     position: relative;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 7px 14px;
+    padding: 6px 12px;
   }
   .line:active {
     top: 2px;
@@ -75,13 +75,13 @@
     display: inline;
     position: relative;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 7px 14px;
+    padding: 6px 12px;
   }
   .slack:active {
     top: 2px;
